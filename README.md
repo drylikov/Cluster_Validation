@@ -1,4 +1,4 @@
-Cluster Validation
+Cluster Validation.
 ==================
 
 Before installing MapR Hadoop it is invaluable to validate the hardware and
@@ -31,7 +31,7 @@ Compare results with:
 
 Download and extract the Cluster_Validation package with a command like this:
 
-    curl -L -o cluster-validation.tgz http://github.com/drylikov/Cluster_Validation/tarball/master
+    curl -L -o Cluster_Validation.tgz http://github.com/drylikov/Cluster_Validation/tarball/master
 Extract with tar in /root or your home folder and rename the top level folder like this:  
 
     mv jbenninghoff-Cluster_Validation-* Cluster_Validation
