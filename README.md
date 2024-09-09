@@ -34,7 +34,7 @@ Download and extract the Cluster_Validation package with a command like this:
     curl -L -o Cluster_Validation.tgz http://github.com/drylikov/Cluster_Validation/tarball/master
 Extract with tar in /root or your home folder and rename the top level folder like this:  
 
-    mv jbenninghoff-Cluster_Validation-* Cluster_Validation
+    mv drylikov-Cluster_Validation-* Cluster_Validation
 
 Copy the Cluster_Validation folder to all nodes in the cluster.  The
 clush commmand simplifies this:
