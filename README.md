@@ -29,25 +29,25 @@ Verify clush works correctly by running:
 Compare results with:
     "clush -ab date".
 
-Download and extract the cluster-validation package with a command like this:
+Download and extract the Cluster_Validation package with a command like this:
 
-    curl -L -o cluster-validation.tgz http://github.com/jbenninghoff/cluster-validation/tarball/master
+    curl -L -o cluster-validation.tgz http://github.com/drylikov/Cluster_Validation/tarball/master
 Extract with tar in /root or your home folder and rename the top level folder like this:  
 
-    mv jbenninghoff-cluster-validation-* cluster-validation
+    mv jbenninghoff-Cluster_Validation-* Cluster_Validation
 
-Copy the cluster-validation folder to all nodes in the cluster.  The
+Copy the Cluster_Validation folder to all nodes in the cluster.  The
 clush commmand simplifies this:
 
-    clush -a --copy /path.../cluster-validation --dest /path.../cluster-validation
-    clush -Ba ls /path.../cluster-validation	# confirm that all nodes have the utilties
+    clush -a --copy /path.../Cluster_Validation --dest /path.../Cluster_Validation
+    clush -Ba ls /path.../Cluster_Validation	# confirm that all nodes have the utilties
 
 Step 1 : Gather Base Audit Information
 --------------------------------------
 Use cluster-audit.sh to verify that you have met the MapR installation
 requirements.  Run:
 
-    /root/cluster-validation/pre-install/cluster-audit.sh | tee cluster-audit.log
+    /root/Cluster_Validation/pre-install/cluster-audit.sh | tee cluster-audit.log
 on the node where clush has been installed and configured to access
 all cluster nodes.  Examine the log for inconsistency among any nodes.  
 Do not proceed until all inconsistencies have been resolved and all 
@@ -68,7 +68,7 @@ patient.  Update the half1 and half2 arrays in the network-test.sh
 script to include the first and second half of the IP addresses of
 your cluster nodes.  Delete the exit command also.  Run:
 
-    /root/cluster-validation/pre-install/network-test.sh | tee network-test.log
+    /root/Cluster_Validation/pre-install/network-test.sh | tee network-test.log
 on the node where clush has been installed and configured.
 Expect about 90% of peak bandwidth for either 1GbE or 10GbE
 networks:
@@ -82,7 +82,7 @@ Use the stream59 benchmark to test memory performance.  This test will take
 about a minute or so to run.  It can be executed in parallel on all
 the cluster nodes with the command:
 
-    clush -Ba '/root/cluster-validation/pre-install/memory-test.sh | grep ^Triad' | tee memory-test.log
+    clush -Ba '/root/Cluster_Validation/pre-install/memory-test.sh | grep ^Triad' | tee memory-test.log
 Memory bandwidth is determined by speed of DIMMs, number of memory
 channels and to a lesser degree by CPU frequency.  Current generation
 Xeon based servers with eight or more 1600MHz DIMMs can deliver
@@ -100,7 +100,7 @@ verified that the list of spindles to test is correct.
 
 The test can be run in parallel on all nodes with:
 
-    clush -ab /root/cluster-validation/pre-install/disk-test.sh
+    clush -ab /root/Cluster_Validation/pre-install/disk-test.sh
 
 Current generation (2012+) 7200 rpm SATA drives can produce 
 100-145 MB/sec sequential read and write performance.
@@ -137,5 +137,3 @@ script is a useful set of example maprcli commands. There are also
 example install, upgrade and uninstall scripts.  None of those will
 run without editing, so read the scripts carefully to understand
 how to edit them with site specific info.
-
-/John Benninghoff
